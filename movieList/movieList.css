@@ -1,0 +1,139 @@
+/*
+@font-face delcarations
+*/
+@font-face {
+         font-family: 'ChunkFive';
+         src: url('/Chunkfive.otf');
+         font-weight: normal;
+         font-style: normal;
+}
+@font-face {
+         font-family: 'Josefin';
+         src: url('/JosefinSlab-SemiBoldItalic.ttf');
+         font-weight: normal;
+         font-style: normal;
+}
+
+/*
+General Page Styling
+*/
+*{
+	padding: :0;
+	margin:0;
+}
+body {
+  background: url("/bg-pattern.png") repeat scroll center top rgba(0, 0, 0, 0);
+  color: #28201B;
+  font-family: Arial,Verdana,Helvetica,sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  position: relative;
+}
+.contentWrapper{
+	width:80%;
+	margin :30px auto;
+}
+.contentWrapper h2{
+	text-align: center;
+	font-size: 48px;
+	padding-bottom:8px;
+	padding-top:8px;
+	font-family: 'ChunkFive',sans-serif;
+}
+/* 
+Form styling
+*/
+.formSection{
+	display: block;
+	margin: 20px;
+	margin-left:4%;
+	text-align: center;
+	font-family: 'ChunkFive',sans-serif;
+	float:left;
+}
+.formSection .form-unit{
+	float:left;
+	padding-top: 5px;
+}
+.formSection label{
+	margin-right: 3px;
+	font-size:18px;
+	padding-top: 8px;
+}
+.formSection input{
+	margin-right: 20px;
+	font-size: 16px;
+	font-family: arial;
+	font-weight: bold;
+	border: 1px solid black;
+}
+.formSection select{
+	margin-right: 60px;
+	font-size: 16px;
+}
+#addMovie,#updateMovie{
+	display:inline-block;
+	text-align: center;
+	background: black;
+	color:white;
+	font-size:22px;
+	padding-top:6px;
+	padding-bottom:3px;
+	padding-left:12px;
+	padding-right:12px;
+	font-family: 'ChunkFive',sans-serif;
+	cursor: pointer;
+	float:left;
+	
+}
+/* 
+Table Styling, for Desktops/Laptops 
+*/
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  font-family: 'Josefin',sans-serif;
+  border: 2px solid black;
+  font-size: 18px;
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+  cursor: pointer;
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+th{
+	text-align: center;
+}
+th:after{
+	float:right;
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); /* IE 9 */
+	-webkit-transform:rotate(90deg); /* Opera, Chrome, and Safari */
+	font-family: 'ChunkFive',sans-serif;
+}
+th.asc:after{
+	content:'>';
+}
+th.desc:after{
+	content:'<';
+}
+.centered-text{
+	text-align: center;
+}
+/*
+Override meteor account widget styling
+*/
+#login-sign-in-link{
+	font-family: 'ChunkFive',sans-serif!important;
+	font-size: 18px!important;
+}

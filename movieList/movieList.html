@@ -1,0 +1,72 @@
+<head>
+  <title>My Movie Collection</title>
+</head>
+
+<body>
+  {{> content}}
+</body>
+
+<template name="content">
+  	<div class="contentWrapper">
+  	  <div>{{> loginButtons}}</div>	
+	  <h2>{{twitterLoginName}} Movie Collection</h2>	
+	  {{> movieTable}}
+    </div>
+  </template>
+
+<template name="movieTable">
+	{{> movieForm}}
+	<table>
+		<thead>
+			<tr>
+				<th class="desc" id='title-sort'>Movie Title</th>
+				<th class="desc" id="releaseYear-sort">Release Year</th>
+				<th class="desc" id="genre-sort">Genre</th>
+				<th >Edit</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{ #each movieList}}
+				{{> movie}}		
+			{{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="movie">
+	<tr>
+		<td>{{title}}</td>
+		<td>{{releaseYear}}</td>
+		<td>{{genre}}</td>
+		<td class="centered-text"><button id="editMovie">Edit</button></td>
+		<td class="centered-text"><button id="deleteMovie">Delete</button></td>
+	</tr>
+</template>
+
+<template name="movieForm">
+	<div class="formSection">
+		<span class="form-unit">
+			<label for="title">Movie Title</label>
+			<input type="text" id="title" value="{{currTitle}}"/>
+		</span>	
+		<span class="form-unit">
+			<label for="releaseYear">Release Year</label>
+			<input type="text" id="releaseYear" value="{{currReleaseYear}}"/>
+		</span>
+		<span class="form-unit">	
+			<label for="genre">Genre</label>
+			<select id="genre">
+				<option value="{{currGenre}}">{{currGenre}}</option>
+				{{#each genreOptions}}
+					<option value={{this}}>{{this}}</option>
+				{{/each}}
+			</select>
+		</span>
+		{{#if editing}}
+			<button id="updateMovie">Update Movie</button>
+		{{else}}
+			<button id="addMovie">Add Movie</button>
+		{{/if}}
+	</div>	
+</template>
